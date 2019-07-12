@@ -12,7 +12,12 @@
  - That’s a good start. They should all be sold on a per seat per month pricing structure, once you have a few contenders you’d need to reach out to them to see what that looks like.
  
 Perhaps do a first pass to see if you can find any other contenders and let me know what the final list of potential options looks like, you can then start researching/testing them in more detail.
-
+ - [NSS Labs Advanced Endpoint Protection Deep-Dive](https://www.nsslabs.com/security-value-maps/advanced-endpoint-protection-aep/)
+ - Takeaways:
+   - Carbon Black's CB Defense -  the highest cost of the proposed options with a Total Cost of Ownership (TCO) of $245, and had an above average security effectiveness of 93.6%
+   - SentinelOne had a below average TCO of $148, with an above average security effectiveness of 97.7%
+   - Crowdstrike was not tested
+   - Other noteworthy options are Trend Micro, EnSilo, and Palo Alto Networks
 ___
 
 #### Use Cases
@@ -23,6 +28,8 @@ There will be only one or two people managing the SIEM server and the security m
 ___
 
 ### Carbon Black's **CB Defense**
+
+ - [Carbon Black CB Defense Datasheet](https://www.carbonblack.com/wp-content/uploads/2018/12/CB_Defense_DataSheet_122018_RGB.pdf)
 
 Carbon Black offers a 15 day free trial for their CB Defense
 
@@ -41,6 +48,11 @@ Available on the following platforms:
  - Windwos Server 2012, 2012 R2
  - Windows Server 2016
  - Windows Server 2019
+
+Cons:
+
+ - Carbon Black's CB Defense did have the highest amount of false positive's of any tested EDR product, with NSS Labs evaluating the type I error rate at 0.6%. All other tested products had either a 0% or a 0.1% false positive rate. 
+ - A newer acquisition, so relatively untested in production environments when compared to SentinelOne or Crowdstrike or Cisco AMP, etc. Although this service is still one of the most highly rated out there, it replaced CB's native Confer service.
 
 ___
 
@@ -70,4 +82,18 @@ Cons:
 ___
 
 
-### Sentinelone
+### SentinelOne's **EPP**
+ - [SentinelOne EPP Datasheet](https://go.sentinelone.com/rs/327-MNM-087/images/SEN0202_DataSheet_EPP_WEB.pdf)
+
+SentinelOne's Endpoint Protection Platform (EPP) is their flagship program, and is highly rated by NSS labs. It does offer integration with Splunk, and EPP can be either cloud-based or on-prem deployment.
+
+Available on the following Platforms 
+ - Winows 7/8/10
+ - MacOS X 10.9+
+ - CentOS, RHEL 6.5, 7.0, 7.2
+ - Ubuntu 12.04, 14.04, 16.04, 16.10
+ - Windows Server 2003
+ - Windows Server 2008, 2008 R2
+ - Windows Server 2012, 2012 R2
+ - Windows Server 2016
+ - VMware vSphere, etc.
