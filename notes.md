@@ -15,6 +15,13 @@ Perhaps do a first pass to see if you can find any other contenders and let me k
 
 ___
 
+#### Use Cases
+
+This service should integrate with Splunk SIEM and provide Anti-virus and EDR to our clients. 
+
+There will be only one or two people managing the SIEM server and the security monitoring for the clients who choose to upgrade to the enhanced security package. For the majority of our clients, PHI or PCI data will not be a factor. While we do execute routine vulnerability management scans, we have not been audited by any network security service and OSIbeyond has not been pentested.
+___
+
 ### Carbon Black's **CB Defense**
 
 Carbon Black offers a 15 day free trial for their CB Defense
@@ -52,6 +59,14 @@ Only Enterprise tier and above include the EDR. The Complete tier is purchased a
 
 Crowdstrike has written a series of add-ons to facilitate integration with Splunk. 
 
+Typically, Crowdstrike's Falcon NGAV+EDR is suggested to run *on top* on traditional AV. Crowdstrike is also the best in the game when it comes to preventing malicious PowerShell execution. Installation can be password-protected so that it cannot be uninstalled, even with local administrator privileges. 
+
+CS also has true quarantine, where CB would only delete malware or malicious script. The true quarantine process of CS allows for recovery of the file or even the malware. 
+
+Cons:
+
+ - EDR does not have capability to scan a host prior to being installed on said host. 
+ - CS is noted to have a lack of client-side tools - it does a bad job of managing the entire environment. For example, there is no way to see how many systems currently do not have it installed. Or how many have it installed with no process running. No such "heartbeat" records - "X machine has not checked in in X hours."
 ___
 
 
