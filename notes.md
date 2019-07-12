@@ -1,4 +1,4 @@
-##Notes on EDR Endpoint Protection
+## Notes on EDR Endpoint Protection
 
 **Conditions**
 
@@ -15,8 +15,12 @@ Perhaps do a first pass to see if you can find any other contenders and let me k
 
 ___
 
-**Carbon Black**
-  Carbon Black's **CB Defense** Next-Gen Anti Virus (NGAV) add-on for Splunk allows administrators to forward events and notifications into Splunk for correlation, aggregation, and analysis.
+### Carbon Black's **CB Defense**
+
+Carbon Black offers a 15 day free trial for their CB Defense
+
+Carbon Black's **CB Defense** Next-Gen Anti Virus (NGAV) add-on for Splunk allows administrators to forward events and notifications into Splunk for correlation, aggregation, and analysis.
+
 The CB Defense package is NGAV + EDR which allows signature collection and logging both online and offline. CB Defense uses cloud-based signature-based threat detection using their "Streaming Prevention" against their "Predictive Security Cloud". Data records of offline computers will be synced back to CB Defense and Splunk once the device returns online. The Streaming Defense service works by scoring on-going actions, and terminating the processes once the score reaches "critical". Administrators can isolate endpoints, blacklisting applications, or terminate running processes from the CB Defense control panel or from Splunk. Quarantined or isolated devices can still be SSH'd into for remediation. 
 
 [Carbon Black CB Defense NGAV+EDR](https://www.carbonblack.com/wp-content/uploads/2018/12/CB_Defense_DataSheet_122018_RGB.pdf)
@@ -34,3 +38,21 @@ Available on the following platforms:
 ___
 
 
+### Crowdstrike's **Falcon Point**
+
+Crowdstrike offers a 15 day free trial for their NGAV
+
+Crowdstrike's NGAV+EDR, called **Falcon Strike**, is available as tiers:
+ - Falcon Pro - $6.99 per month per endpoint
+ - Falcon Enterprise - $14.99 per endpoint per month
+ - Falcon Premium - $17.99 per endpoint per month 
+ - Falcon Complete - Inquire about pricing
+
+Only Enterprise tier and above include the EDR. The Complete tier is purchased as security as a service. 
+
+Crowdstrike has written a series of add-ons to facilitate integration with Splunk. 
+
+___
+
+
+### Sentinelone
