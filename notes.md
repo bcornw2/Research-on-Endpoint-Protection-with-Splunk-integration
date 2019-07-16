@@ -33,6 +33,8 @@ ___
 
 Carbon Black offers a 15 day free trial for their CB Defense
 
+Carbon Black's CB Defense is often characterized by its administrators as a service that requires high amounts of configuration, or "tuning", but will run fairly hands-free after that initialization. 
+
 Carbon Black's **CB Defense** Next-Gen Anti Virus (NGAV) add-on for Splunk allows administrators to forward events and notifications into Splunk for correlation, aggregation, and analysis.
 
 The CB Defense package is NGAV + EDR which allows signature collection and logging both online and offline. CB Defense uses cloud-based signature-based threat detection using their "Streaming Prevention" against their "Predictive Security Cloud". Data records of offline computers will be synced back to CB Defense and Splunk once the device returns online. The Streaming Defense service works by scoring on-going actions, and terminating the processes once the score reaches "critical". Administrators can isolate endpoints, blacklisting applications, or terminate running processes from the CB Defense control panel or from Splunk. Quarantined or isolated devices can still be SSH'd into for remediation. 
@@ -45,7 +47,7 @@ Available on the following platforms:
  - Windows 7/8/10
  - Mac OS X 10.6.8+
  - Windows Server 2008 R2
- - Windwos Server 2012, 2012 R2
+ - Windows Server 2012, 2012 R2
  - Windows Server 2016
  - Windows Server 2019
 
@@ -53,11 +55,15 @@ Cons:
 
  - Carbon Black's CB Defense did have the highest amount of false positive's of any tested EDR product, with NSS Labs evaluating the type I error rate at 0.6%. All other tested products had either a 0% or a 0.1% false positive rate. 
  - A newer acquisition, so relatively untested in production environments when compared to SentinelOne or Crowdstrike or Cisco AMP, etc. Although this service is still one of the most highly rated out there, it replaced CB's native Confer service.
+ - Known to have problems with Mac as the agents for Mac are on a different release schedule than the Windows agents. 
+
 
 ___
 
 
 ### Crowdstrike's **Falcon Point**
+
+- [Crowdstrike Falcon Complete Data Sheet](https://www.crowdstrike.com/wp-content/brochures/datasheets/falcon_endpoint_protection_complete.pdf)
 
 Crowdstrike offers a 15 day free trial for their NGAV
 
@@ -75,14 +81,32 @@ Typically, Crowdstrike's Falcon NGAV+EDR is suggested to run *on top* on traditi
 
 CS also has true quarantine, where CB would only delete malware or malicious script. The true quarantine process of CS allows for recovery of the file or even the malware. 
 
+Re-selling/Partnering
+ - Crowdstrike has a reseller program that requires OSI to meet the following requirements:
+    - MSSSP needs at least 1000 endpoints under management 
+    - MSSSP must make a minimum upfront purchase of at least 250 endpoint licenses
+
+
+Available on the following platforms
+ - Windows 7/8/10
+ - MacOS
+ - Linux
+ - Windows Server (unspecified)
+
 Cons:
 
  - EDR does not have capability to scan a host prior to being installed on said host. 
  - CS is noted to have a lack of client-side tools - it does a bad job of managing the entire environment. For example, there is no way to see how many systems currently do not have it installed. Or how many have it installed with no process running. No such "heartbeat" records - "X machine has not checked in in X hours."
+ - Crowdstrike does not offer an .msi installer, and instead recommends that an outdated GPO deployment strategy via logon scripts
+    - "windowssensor.exe /install /quiet /norestart" supposedly installs the agent, as per their documentation, without issue or interruption
+ 
+
+
+
 ___
 
 
-### SentinelOne's **EPP**
+### SentinelOne's **EPP** - (Endpoint Protection Platform)
  - [SentinelOne EPP Datasheet](https://go.sentinelone.com/rs/327-MNM-087/images/SEN0202_DataSheet_EPP_WEB.pdf)
 
 SentinelOne's Endpoint Protection Platform (EPP) is their flagship program, and is highly rated by NSS labs. It does offer integration with Splunk, and EPP can be either cloud-based or on-prem deployment.
