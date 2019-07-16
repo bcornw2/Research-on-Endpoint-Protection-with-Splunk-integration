@@ -27,6 +27,12 @@ This service should integrate with Splunk SIEM and provide Anti-virus and EDR to
 There will be only one or two people managing the SIEM server and the security monitoring for the clients who choose to upgrade to the enhanced security package. For the majority of our clients, PHI or PCI data will not be a factor. While we do execute routine vulnerability management scans, we have not been audited by any network security service and OSIbeyond has not been pentested.
 ___
 
+#### NGAV+EDR - State of the Industry
+
+There are about a dozen leading providers of NGAV+EDR, with some who specialize in the field, and some, like Cisco and Microsoft, that just have the option. Every single NGAV+EDR is cloud-based, and every single one uses Machine Learning/Artificial Intelligence. Most of these services actually sound fairly similar in how they work and what they can do. For instance, every one of these four choices outlined in this document will boast the same methodology for endpoint detection and protection: *This cloud-based software, which is installed by agent onto an endpoint, and works online and offline, uses behavioral-analysis faciliatated by AI/ML, instead of traditional signature analysis, to detect threats, viruses, and malware, and kill or quarantine the process before the action can be completed.* 
+
+___
+
 ### Carbon Black's **CB Defense**
 
  - [Carbon Black CB Defense Datasheet](https://www.carbonblack.com/wp-content/uploads/2018/12/CB_Defense_DataSheet_122018_RGB.pdf)
@@ -38,8 +44,6 @@ Carbon Black's CB Defense is often characterized by its administrators as a serv
 Carbon Black's **CB Defense** Next-Gen Anti Virus (NGAV) add-on for Splunk allows administrators to forward events and notifications into Splunk for correlation, aggregation, and analysis.
 
 The CB Defense package is NGAV + EDR which allows signature collection and logging both online and offline. CB Defense uses cloud-based signature-based threat detection using their "Streaming Prevention" against their "Predictive Security Cloud". Data records of offline computers will be synced back to CB Defense and Splunk once the device returns online. The Streaming Defense service works by scoring on-going actions, and terminating the processes once the score reaches "critical". Administrators can isolate endpoints, blacklisting applications, or terminate running processes from the CB Defense control panel or from Splunk. Quarantined or isolated devices can still be SSH'd into for remediation. 
-
-[Carbon Black CB Defense NGAV+EDR](https://www.carbonblack.com/wp-content/uploads/2018/12/CB_Defense_DataSheet_122018_RGB.pdf)
 
 CB Defense would completely replace our traditional BitDefender AV on all endpoints as part of our enhanced cybersecurity package, and the whole system operates from one agent per endpoint thats boasts a less than one percent CPU and disk utilization.
 
@@ -96,7 +100,7 @@ Available on the following platforms
 Cons:
 
  - EDR does not have capability to scan a host prior to being installed on said host. 
- - CS is noted to have a lack of client-side tools - it does a bad job of managing the entire environment. For example, there is no way to see how many systems currently do not have it installed. Or how many have it installed with no process running. No such "heartbeat" records - "X machine has not checked in in X hours."
+ - Falcon does not have any "heartbeat" records - "X machine has not checked in in X hours."
  - Crowdstrike does not offer an .msi installer, and instead recommends that an outdated GPO deployment strategy via logon scripts
     - "windowssensor.exe /install /quiet /norestart" supposedly installs the agent, as per their documentation, without issue or interruption
  
@@ -111,6 +115,8 @@ ___
 
 SentinelOne's Endpoint Protection Platform (EPP) is their flagship program, and is highly rated by NSS labs. It does offer integration with Splunk, and EPP can be either cloud-based or on-prem deployment.
 
+SentinelOne, or S1 for short, is actually known for their very robust API for Splunk integration (or any other third party platform).
+
 Available on the following Platforms 
  - Winows 7/8/10
  - MacOS X 10.9+
@@ -121,3 +127,15 @@ Available on the following Platforms
  - Windows Server 2012, 2012 R2
  - Windows Server 2016
  - VMware vSphere, etc.
+
+
+
+___
+
+### Palo Alto Networks' **TRAPS**
+
+ - [Palo Alto Traps Datasheet](https://www.paloaltonetworks.com/resources/datasheets/endpoint-protection)
+
+Palo Alto Traps is Palo Alto's EDR, and it is a cloud-based behavioral-analysis software through endpoint agents that predict and prevent suspecct code execution and malware.
+
+
