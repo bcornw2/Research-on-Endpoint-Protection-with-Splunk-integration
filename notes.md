@@ -31,6 +31,7 @@ ___
 
 There are about a dozen leading providers of NGAV+EDR, with some who specialize in the field, and some, like Cisco and Microsoft, that just have the option. Every single NGAV+EDR is cloud-based, and every single one uses Machine Learning/Artificial Intelligence. Most of these services actually sound fairly similar in how they work and what they can do. For instance, every one of these four choices outlined in this document will boast the same methodology for endpoint detection and protection: *This cloud-based software, which is installed by agent onto an endpoint, and works online and offline, uses behavioral-analysis faciliatated by AI/ML, instead of traditional signature analysis, to detect threats, viruses, and malware, and kill or quarantine the process before the action can be completed.* 
 
+Most of the information in this document was sourced from the datasheets and technical specifications of each product, and from information provided from the desperate salespeople, and pros and cons and other opinion content was generated from Gartner Peer reviews and NSS Labs, as well as Reddit comments on certain subreddits like /r/sysadmin, /r/netsec, /r/asknetsec, etc. 
 ___
 
 ### Carbon Black's **CB Defense**
@@ -117,7 +118,9 @@ SentinelOne's Endpoint Protection Platform (EPP) is their flagship program, and 
 
 SentinelOne, or S1 for short, is actually known for their very robust API for Splunk integration (or any other third party platform).
 
-Available on the following Platforms 
+One exciting feature is the "Attack Storyline", which is a forensic representation of what the attack did chronologically. This will include what processes were called, and what process those processes called, in addition to various metrics like raw data and file statistics. 
+
+Available on the following platforms 
  - Winows 7/8/10
  - MacOS X 10.9+
  - CentOS, RHEL 6.5, 7.0, 7.2
@@ -128,7 +131,9 @@ Available on the following Platforms
  - Windows Server 2016
  - VMware vSphere, etc.
 
+Joe Zingarelli - head of MSP deployment for SentinelOne - SentinelOne has specific deployment procedures and pricing for MSPs.
 
+Gabe Sechrest -  Inside Sales Rep
 
 ___
 
@@ -139,3 +144,8 @@ ___
 Palo Alto Traps is Palo Alto's EDR, and it is a cloud-based behavioral-analysis software through endpoint agents that predict and prevent suspecct code execution and malware.
 
 
+Available on the following platforms:
+ - Windows
+ - MacOS
+ - Linux
+ - Android
