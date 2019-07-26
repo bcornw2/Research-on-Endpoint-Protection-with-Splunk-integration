@@ -196,6 +196,11 @@ ___
 
 Palo Alto Traps is Palo Alto's EDR, and it is a cloud-based behavioral-analysis software through endpoint agents that predict and prevent suspecct code execution and malware.
 
+ - Partner program for MSPs is extrememly difficult to get into, since they currently have so many. [Most information can be found here](https://www.paloaltonetworks.com/partners/become-a-partner)
+ - Multi-Tenancy is available only with a minimum of 200 endpoints.
+ - Cannot block full functionality of USB/CD-ROM ports, but can prevent an executable from running.
+ - Licensing is on a per-seat per-year basis.  
+
 A demo will be done by a Jessica Broderick.
 Available on the following platforms:
  - Windows
